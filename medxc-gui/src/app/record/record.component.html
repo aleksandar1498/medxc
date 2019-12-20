@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Record Information</h2>
+<mat-dialog-content class="text">
+    <div class="record text-center" *ngIf="data">
+        <div class="record-header"># Examination date: {{data.app_time|date:"yyyy-MM-dd"}}/{{data.app_time|date:"HH:mm"}}</div>
+        <div class="record-block">
+            <h4 class="record-title">Anamnesis</h4>
+            <p class="record-text">{{data.rec_anamnesis}}</p>
+        </div>
+        <div class="record-block">
+            <h4 class="record-title">Observation</h4>
+            <p class="record-text">{{data.rec_observation}}</p>
+        </div>
+        <div class="record-block">
+            <h4 class="record-title">Therapy</h4>
+            <p class="record-text">{{data.rec_therapy}}</p>
+            <div class="record-footer"># Doctor: {{data.doc_name}}</div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="true" color="primary">Close</button>
+</mat-dialog-actions>

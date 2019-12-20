@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <STATUS
+        STATUS_ID="4"
+        STATUS_NAME="Completed" />
+    <SPECIALTY
+        SPEC_ID="35"
+        SPEC_NAME="Family Practice" />
+    <DOCTOR
+        DOC_NUM="0055555555"
+        DOC_NAME="Telma Kovacheva"
+        EMAIL="tkovacheva@doc.com"
+        PHONE="+3598957777777" />
+    <PATIENT
+        PIN="9812148221"
+        EMAIL=""
+        NAME="NE"
+        PHONE="NE"
+        SEX="F"
+        ADDRESS="" />
+    <APPOINTMENT
+        APP_ID="1"
+        APP_DATE_TIME="2019-12-20 23:59:00.0"
+        STATUS_ID="4"
+        SPEC_ID="35"
+        PIN="9812148221"
+        DOC_NUM="0055555555" />
+    <APPOINTMENT
+        APP_ID="2"
+        APP_DATE_TIME="2019-12-22 23:59:00.0"
+        STATUS_ID="4"
+        SPEC_ID="35"
+        PIN="9812148221"
+        DOC_NUM="0055555555" />
+    <APP_RECORD
+        APP_ID="1"
+        ANAMNESIS="Amnesis"
+        OBSERVATION="B"
+        THERAPY="C" />
+    <APP_RECORD
+        APP_ID="2"
+        ANAMNESIS="Amnesis"
+        OBSERVATION="B"
+        THERAPY="C" />
+</dataset>

@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">Upcoming test to be performed on patient {{id}} </mat-toolbar>
+
+<mat-table [dataSource]="tests" matSort *ngIf="tests?.length > 0">
+  <ng-container matColumnDef="Date">
+    <th mat-header-cell *matHeaderCellDef scope="col"> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.dueDate|date:"yyyy-MM-dd"}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col">Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.testType.testTypeName}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col">Descripton </th>
+    <td mat-cell *matCellDef="let element" color="accent"> {{element.testDescription}} </td>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+</mat-table>
+<div *ngIf="tests?.length === 0">No upcoming tests found</div>

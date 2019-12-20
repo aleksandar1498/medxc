@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <proxies>
+
+        <proxy>
+            <active>true</active>
+            <protocol>http</protocol>
+            <host>proxy.obs.bg</host>
+            <port>8080</port>
+            <nonProxyHosts>10.82.63.102</nonProxyHosts>
+        </proxy>
+
+    </proxies>
+
+    <servers>
+        <server>
+            <id>TomcatServer</id>
+            <username>cscbg</username>
+            <password>Welcome9!</password>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>internship</id>
+            <repositories>
+                <repository>
+                    <id>local-nexus-3dparty</id>
+                    <url>http://10.82.63.102:8083/nexus/content/repositories/thirdparty/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>local-nexus</id>
+                    <url>http://10.82.63.102:8083/nexus/content/repositories/central/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>local-nexus</id>
+                    <url>http://10.82.63.102:8083/nexus/content/repositories/central/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <!--make the profile active all the time -->
+        <activeProfile>internship</activeProfile>
+    </activeProfiles>
+
+</settings>
+

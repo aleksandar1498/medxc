@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <SPECIALTY
+        SPEC_ID="1"
+        SPEC_NAME="TEST SPECIALTY" />
+    <SPECIALTY
+        SPEC_ID="2"
+        SPEC_NAME="SPECIALTY" />
+</dataset>

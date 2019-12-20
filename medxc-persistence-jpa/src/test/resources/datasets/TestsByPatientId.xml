@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+<STATUS  
+    STATUS_ID= "4"
+    STATUS_NAME="aa"
+  />
+<SPECIALTY
+    SPEC_ID = "1"
+    SPEC_NAME = "aaa"
+     />
+<DOCTOR
+        DOC_NUM ="005"
+        DOC_NAME = "test" 
+        EMAIL="test"
+        PHONE="211"
+        />
+<PATIENT
+        PIN="2"
+        EMAIL="test"
+        NAME="test"
+        PHONE="211"
+        SEX="1"
+        ADDRESS="a" />
+<APPOINTMENT
+        APP_ID = "1"
+        DOC_NUM="005"
+        APP_DATE_TIME="2020-12-20 13:00:00"
+        STATUS_ID="4"
+        SPEC_ID="1"
+        PIN="2" />  
+	<TESTTYPE 
+		TTYPE_ID="1"
+		REF_LIMITS="40 - 85 mg/dL"
+		TEST_NAME="glucose"/>
+
+	<TESTTYPE 
+		TTYPE_ID="2"
+		REF_LIMITS="11 - 15 seconds" 
+		TEST_NAME="thrombin time"/>
+        
+	<APP_TEST
+		TTYPE_ID ="1"
+		APP_ID="1"
+		DUE_DATE ="2020-12-20 13:00:00"/>
+        
+    
+
+</dataset>

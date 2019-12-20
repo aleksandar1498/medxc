@@ -1,0 +1,166 @@
+<form style="margin-left:15px;" [formGroup]="profileForm" #formDir="ngForm" (ngSubmit)="registerPatient(formDir)">
+    <h4>Patient Registration Info</h4>
+    <figure>
+        <figcaption>Registration info</figcaption>
+        <table aria-hidden="true">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <mat-form-field>
+                                <label for="id">Personal ID <span class="requiredField">*</span></label>
+                                <input matInput id="id" type="text" formControlName="id" required>
+
+                                <mat-error *ngIf="profileForm.get('id').errors?.required">EGN is required.</mat-error>
+                                <mat-error *ngIf="profileForm.get('id').errors?.minlength">
+                                    Personal ID must be at least 4 characters long.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('id').errors?.maxlength">
+                                    Personal ID maximum length is 10 characters long.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('id').errors?.usedPIN">
+                                    Personal ID is already used.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                    <td class="space"></td>
+                    <td>
+                        <div>
+                            <mat-form-field style="width:30vw">
+                                <label for="name">Full Name <span class="requiredField">*</span></label>
+                                <input matInput id="name" type="text" formControlName="name" required>
+
+                                <mat-error *ngIf="profileForm.get('name').errors?.required">
+                                    Full Name is required.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('name').errors?.maxlength">
+                                    Full Name maximum length is 70 characters long.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <div>
+                            <mat-form-field>
+                                <label for="phoneNumber">Phone Number <span class="requiredField">*</span></label>
+                                <input matInput id="phoneNumber" type="text" formControlName="phoneNumber" required>
+
+                                <mat-error *ngIf="profileForm.get('phoneNumber').errors?.required">
+                                    Phone Number is required.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('phoneNumber').errors?.pattern">
+                                    Phone Number is not valid.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('phoneNumber').errors?.maxlength">
+                                    Phone Number maximum length is 20 characters long.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                    <td class="space"></td>
+                    <td>
+                        <div>
+                            <mat-form-field style="width:30vw">
+                                <label for="email">E-mail <span class="requiredField">*</span></label>
+                                <input matInput id="email" type="text" formControlName="email" required>
+
+                                <mat-error *ngIf="profileForm.get('email').errors?.required">
+                                    Email is required.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('email').errors?.email">
+                                    Email should be vailid.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('email').errors?.maxlength">
+                                    Email maximum length is 50 characters long.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sex">Gender <span class="requiredField">*</span></label>
+                        <br>
+                        <mat-radio-group formControlName="sex">
+                            <mat-radio-button value="M">Male </mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="F">Female </mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="O">Other </mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="U">Prefer not to say </mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                    <div></div>
+                    <td>
+                        <div>
+                            <mat-form-field style="width:30vw">
+                                <label for="address">Address</label>
+                                <input matInput id="address" type="text" formControlName="address">
+
+                                <mat-error *ngIf="profileForm.get('address').errors?.maxlength">
+                                    Address maximum length is 100 characters long.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <mat-form-field>
+                                <label for="password">Password <span class="requiredField">*</span></label>
+                                <input matInput id="password" type="password" formControlName="password" required>
+
+                                <mat-error *ngIf="profileForm.get('password').errors?.required">Password is required.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('password').errors?.minlength">
+                                    Passowrd should be at least 7 symbols long.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                    <td class="space"></td>
+                    <td>
+                        <div>
+                            <mat-form-field>
+                                <label for="confirmPassword">Confirm Password <span
+                                        class="requiredField">*</span></label>
+                                <input matInput id="confirmPassword" type="password" formControlName="confirmPassword"
+                                    required>
+
+                                <mat-error *ngIf="profileForm.get('confirmPassword').errors?.required">
+                                    Password is required.
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('confirmPassword').errors?.passwordsDontMatch">
+                                    Passwords don't match.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-error *ngIf="isPINUsed">
+                            Patient with Personal ID <strong>{{patient.id}}</strong> is already registered!
+                        </mat-error>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+    <div *ngIf="isCreated">
+        <p>Patient <strong>{{ patient.name }} ({{patient.id}})</strong> is successfully registered!</p>
+    </div>
+    <br>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="profileForm.invalid">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Submit
+    </button>
+    &nbsp;
+    <button type="button" mat-raised-button color="primary" (click)="resetForm(formDir)">Reset</button>
+</form>
+<br>

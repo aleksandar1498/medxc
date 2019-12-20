@@ -1,0 +1,42 @@
+<p>
+    ID:
+    <input type="text" id="idInput" />
+    NAME:
+    <input type="text" id="nameInput" />
+    EMAIL:
+    <input type="text" id="emailInput" />
+    PHONE NUMBER:
+    <input type="text" id="phoneNumberInput" />
+
+
+</p>
+<div *ngIf="loading">Loading..</div>
+<div *ngIf="!loading">
+    Choose specialties
+    <div id = "Table"> 
+        <table>
+            <caption>Choose specialties</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Specialty</th>
+                    <th scope="col">Include</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let specialty of specialtiesLoaded">
+                    <td>{{specialty}}</td>
+                    <td>
+                        <input type="checkbox" (change)="chooseSpecialty(specialty)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+        <button (click)="createDoctor()">create</button>
+        <br>
+        Created Doctor:
+        <br>
+    <div *ngIf="!created">nothing created yet</div>
+    <div *ngIf="created">Doctor successfully created</div>
+</div>

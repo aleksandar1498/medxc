@@ -1,0 +1,8 @@
+span.requiredField  {
+    vertical-align: super;color:red
+  }
+/* make the cells appear to be empty */
+.space {
+    background: none;    
+    width: 10rem;
+  }

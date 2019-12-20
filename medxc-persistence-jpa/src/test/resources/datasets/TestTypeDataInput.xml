@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <TESTTYPE
+        TEST_NAME="glucose"
+        REF_LIMITS="40 - 85 mg/dL"/>
+    <TESTTYPE
+        TEST_NAME="thrombin time"
+        REF_LIMITS="11 - 15 seconds"/>
+</dataset>

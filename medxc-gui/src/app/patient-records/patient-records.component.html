@@ -1,0 +1,39 @@
+<h2 class="text-lg-center"><strong>Patient: </strong><small>{{id}}</small></h2>
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <table  class="table table-hover">
+            <caption></caption>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">
+                        Anamnesis
+                    </th>
+                    <th scope="col">
+                        Observation
+                    </th>
+                    <th scope="col">
+                        Therapy
+                    </th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of records">
+                    <td>
+                        {{record.anamnesis}}
+                    </td>
+                    <td>
+                        {{record.observation}}
+                    </td>
+                    <td>
+                        {{record.therapy}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+
+

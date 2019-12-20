@@ -1,0 +1,67 @@
+<table mat-table [dataSource]="patients">
+<caption>Patients</caption>
+    <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="PhoneNumber">
+        <th mat-header-cell *matHeaderCellDef scope="col"> PhoneNumber </th>
+        <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Sex">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Sex </th>
+        <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="SeeAppointments">
+        <th mat-header-cell *matHeaderCellDef scope="col">Appointments</th>
+        <td mat-cell *matCellDef="let element">       
+            <button mat-raised-button (click)="showAppointment(element.id)" color="primary" 
+            [disabled]="element.appointments.length === 0">
+           Show Appointment
+            </button> 
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="SeeRecords">
+          <th mat-header-cell *matHeaderCellDef scope="col">Records</th>
+          <td mat-cell *matCellDef="let element">       
+              <button mat-raised-button (click)="showRecords(element.id)" color="primary">
+             Show Records
+              </button> 
+          </td>
+        </ng-container>
+
+      <ng-container matColumnDef="SeeHistory">
+        <th mat-header-cell *matHeaderCellDef scope="col">History</th>
+        <td mat-cell *matCellDef="let element">       
+            <button mat-raised-button (click)="showHistory(element.id)" color="primary">
+           Show History
+            </button> 
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="SeeTests">
+        <th mat-header-cell *matHeaderCellDef scope="col">View Tests</th>
+        <td mat-cell *matCellDef="let element">       
+            <button mat-raised-button (click)="showTests(element.id)" color="primary">
+           View Tests
+            </button> 
+        </td>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+
+  </table>

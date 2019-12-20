@@ -1,0 +1,80 @@
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dxc.internship</groupId>
+        <artifactId>medxc-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>medxc-deploy</artifactId>
+    <packaging>war</packaging>
+
+    <name>Medical Examination Calendar - Deploy</name>
+    <description>Deployment Module for deploying all webapps</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dxc.internship</groupId>
+            <artifactId>medxc-rest</artifactId>
+            <type>war</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dxc.internship</groupId>
+            <artifactId>medxc-gui</artifactId>
+            <type>war</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dxc.internship</groupId>
+            <artifactId>medxc-init</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <overlays>
+                        <overlay>
+                            <id>medxc-rest</id>
+                            <type>war</type>
+                        </overlay>
+                        <overlay>
+                            <id>medxc-gui</id>
+                            <type>war</type>
+                        </overlay>
+                    </overlays>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <username>cscbg</username>
+                    <password>Welcome9!</password>
+                    <url>${urlParam}</url>
+                    <path>/medxc</path>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>redeploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

@@ -1,0 +1,54 @@
+<mat-form-field>
+  <mat-label>Sort by Specialty</mat-label>
+  <mat-select [ngModel]="specialty" (selectionChange)="filterBySpecialties($event.value);">
+    <mat-option value="None">
+      None
+    </mat-option>
+    <mat-option *ngFor="let spec of specialties" value="{{spec.name}}">
+      {{spec.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<table mat-table [dataSource]="appointments">
+  <caption>appointments</caption>
+  <ng-container matColumnDef="Date">
+    <th mat-header-cell *matHeaderCellDef id="Date"> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.date|date:"yyyy-MM-dd"}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Time">
+    <th mat-header-cell *matHeaderCellDef id="Time"> Time </th>
+    <td mat-cell *matCellDef="let element"> {{element.date|date:"HH:mm"}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Doctor">
+    <th mat-header-cell *matHeaderCellDef id="Doctor"> Doctor </th>
+    <td mat-cell *matCellDef="let element"> {{element.doctor.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Specialty">
+    <th mat-header-cell *matHeaderCellDef id="Specialty"> Specialty </th>
+    <td mat-cell *matCellDef="let element"> {{element.specialty}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef id="Status"> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="RecordButton">
+    <th mat-header-cell *matHeaderCellDef id="Record"></th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button (click)="openRecord(element)" color="primary"
+        [disabled]="element.status !== 'Completed'? true : false">
+        See Record
+      </button>
+    </td>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+
+</table>

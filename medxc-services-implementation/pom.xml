@@ -1,0 +1,36 @@
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dxc.internship</groupId>
+        <artifactId>medxc-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>medxc-services-implementation</artifactId>
+    <name>Medical Examination Calendar - Services Implementation</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dxc.internship</groupId>
+            <artifactId>medxc-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dxc.internship</groupId>
+            <artifactId>medxc-persistence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dxc.internship</groupId>
+            <artifactId>medxc-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

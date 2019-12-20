@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <APP_RECORD id="1" APP_ID="1" ANAMNESIS="A" OBSERVATION="B" THERAPY="C"/>
+    <APP_RECORD id="1" APP_ID="2" ANAMNESIS="A" OBSERVATION="B" THERAPY="C"/>
+</dataset>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <DOCTOR
+        DOC_NUM="0000000002"
+        DOC_NAME="Pavel                                                                 "
+        EMAIL="testEmail@abv.bg                                  "
+        PHONE="0899999999          " />
+    <SPECIALTY
+        SPEC_ID="1"
+        SPEC_NAME="TEST SPECIALTY                                    " />
+    <SPECIALTY
+        SPEC_ID="2"
+        SPEC_NAME="SPECIALTY                                         " />
+    <DOC_SPEC
+        DOC_NUM="0000000002"
+        SPEC_ID="1"
+        ODD="-1" />
+    <DOC_SPEC
+        DOC_NUM="0000000002"
+        SPEC_ID="2"
+        ODD="-1" />
+</dataset>

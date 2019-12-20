@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+  .mat-header-cell {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .mat-cell {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  th, td {
+    height: 55px;
+    width: 200px;
+  }

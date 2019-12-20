@@ -1,0 +1,13 @@
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1rem;
+}
+
+#Table{
+    height:300px;
+    width:600px;
+    overflow:auto;
+    overflow-x:hidden;
+    border: 5px solid #91bcc1;
+}
