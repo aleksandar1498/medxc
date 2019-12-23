@@ -2,7 +2,7 @@
 <dataset>
     <DOCTOR
         DOC_NUM="0000000001"
-        DOC_NAME="Atanas                                                                "
-        EMAIL="ABC@abv.bg                                        "
-        PHONE="0899999999          " />
+        DOC_NAME="Atanas"
+        EMAIL="ABC@abv.bg"
+        PHONE="0899999999" />
 </dataset>

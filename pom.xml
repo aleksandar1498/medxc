@@ -124,8 +124,14 @@
             <dependency>
                 <groupId>com.oracle</groupId>
                 <artifactId>ojdbc7</artifactId>
-                <version>12.1.0.2.0</version>
+                <version>12.1.0.2</version>
+                <scope>system</scope>
+                <systemPath>
+                    C:/Users/Aleksandar Stefanov/Desktop/ojdbc7.jar
+                </systemPath>
             </dependency>
+
+
 
             <dependency>
                 <groupId>org.unitils</groupId>
