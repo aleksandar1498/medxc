@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="medxc-gui:war">
+    <output-path>$PROJECT_DIR$/medxc-gui/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>medxc-gui</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="medxc-gui-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="medxc-gui:war exploded" />
+    </root>
+  </artifact>
+</component>

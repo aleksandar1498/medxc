@@ -33,6 +33,13 @@
         SPEC_ID="35"
         PIN="9812148221"
         DOC_NUM="0055555555" />
+    <APPOINTMENT
+            APP_ID="3"
+            APP_DATE_TIME="2019-12-20 23:59:00"
+            STATUS_ID="4"
+            SPEC_ID="35"
+            PIN="9812148221"
+            DOC_NUM="0055555555" />
     <APP_RECORD
         APP_ID="1"
         ANAMNESIS="Amnesis"
@@ -43,4 +50,9 @@
         ANAMNESIS="Amnesis"
         OBSERVATION="B"
         THERAPY="C" />
+    <APP_RECORD
+            APP_ID="3"
+            ANAMNESIS="Amnesis"
+            OBSERVATION="B"
+            THERAPY="C" />
 </dataset>

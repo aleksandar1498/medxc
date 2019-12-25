@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="medxc-deploy:war">
+    <output-path>$PROJECT_DIR$/medxc-deploy/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>medxc-deploy</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="medxc-deploy-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="medxc-deploy:war exploded" />
+    </root>
+  </artifact>
+</component>

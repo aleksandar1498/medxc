@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="medxc-rest:war">
+    <output-path>$PROJECT_DIR$/medxc-rest/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>medxc-rest</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="medxc-rest-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="medxc-rest:war exploded" />
+    </root>
+  </artifact>
+</component>

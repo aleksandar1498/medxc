@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/medxc-commons/medxc-commons.iml" filepath="$PROJECT_DIR$/medxc-commons/medxc-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-deploy/medxc-deploy.iml" filepath="$PROJECT_DIR$/medxc-deploy/medxc-deploy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-gui/medxc-gui.iml" filepath="$PROJECT_DIR$/medxc-gui/medxc-gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-init/medxc-init.iml" filepath="$PROJECT_DIR$/medxc-init/medxc-init.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-parent.iml" filepath="$PROJECT_DIR$/medxc-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-persistence/medxc-persistence.iml" filepath="$PROJECT_DIR$/medxc-persistence/medxc-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-persistence-jpa/medxc-persistence-jpa.iml" filepath="$PROJECT_DIR$/medxc-persistence-jpa/medxc-persistence-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-rest/medxc-rest.iml" filepath="$PROJECT_DIR$/medxc-rest/medxc-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-services/medxc-services.iml" filepath="$PROJECT_DIR$/medxc-services/medxc-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medxc-services-implementation/medxc-services-implementation.iml" filepath="$PROJECT_DIR$/medxc-services-implementation/medxc-services-implementation.iml" />
+    </modules>
+  </component>
+</project>

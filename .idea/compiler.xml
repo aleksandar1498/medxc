@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="medxc-commons" />
+        <module name="medxc-rest" />
+        <module name="medxc-persistence" />
+        <module name="medxc-gui" />
+        <module name="medxc-init" />
+        <module name="medxc-services-implementation" />
+        <module name="medxc-services" />
+        <module name="medxc-persistence-jpa" />
+        <module name="medxc-deploy" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="medxc-commons" target="12" />
+      <module name="medxc-deploy" target="12" />
+      <module name="medxc-gui" target="12" />
+      <module name="medxc-init" target="12" />
+      <module name="medxc-parent" target="1.5" />
+      <module name="medxc-persistence" target="12" />
+      <module name="medxc-persistence-jpa" target="12" />
+      <module name="medxc-rest" target="12" />
+      <module name="medxc-services" target="12" />
+      <module name="medxc-services-implementation" target="12" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="medxc-commons" options="-Xlint:all" />
+      <module name="medxc-deploy" options="-Xlint:all" />
+      <module name="medxc-gui" options="-Xlint:all" />
+      <module name="medxc-init" options="-Xlint:all" />
+      <module name="medxc-persistence" options="-Xlint:all" />
+      <module name="medxc-persistence-jpa" options="-Xlint:all" />
+      <module name="medxc-rest" options="-Xlint:all" />
+      <module name="medxc-services" options="-Xlint:all" />
+      <module name="medxc-services-implementation" options="-Xlint:all" />
+    </option>
+  </component>
+</project>
