@@ -30,7 +30,7 @@ public class BaseValidator {
      * @param rule
      *            is the ValidationRule according to which the object is validated
      */
-    public void validate(final String identifier, final Object obj, final ValidationRule rule) {
+    public <T> void validate(final String identifier, final T obj, final ValidationRule<T> rule) {
         if (!rule.validate(obj)) {
             errors.putIfAbsent(identifier, new ArrayList<>());
             errors.get(identifier).add(new Error(rule.getError(), rule.getParams()));
