@@ -6,24 +6,22 @@ package com.dxc.medxc.persistence.jpa.entities;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.dxc.medxc.persistence.model.Appointment;
 import com.dxc.medxc.persistence.model.Record;
 
 /**
+ * SELECT * FROM APP_RECORD INNER JOIN APPOINTMENT ON APPOINTMENT.APP_ID = APP_RECORD.APP_ID WHERE APPOINTMENT.PIN = '8211125555';
  * @author yyayya
  */
 @Entity
 @Table(name = "APP_RECORD")
+@NamedQuery(name = JpaRecord.RECORDS_BY_PATIENT_PIN,
+        query = "SELECT r FROM JpaRecord r INNER JOIN JpaAppointment a ON a.id = r.appointment.id WHERE a.patient.pin =:id")
 public class JpaRecord implements Record {
 
+    public static final String RECORDS_BY_PATIENT_PIN = "recordsRelatedToPatient";
     @Id
     private int id;
 

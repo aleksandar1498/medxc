@@ -24,11 +24,14 @@ import com.dxc.medxc.persistence.model.Record;
 import com.dxc.medxc.persistence.model.Specialty;
 import com.dxc.medxc.persistence.model.Test;
 import com.dxc.medxc.persistence.repository.PatientRepository;
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
 
 /**
  * @author yyayya
  */
 public class JpaPatientRepository implements PatientRepository {
+
     @SuppressWarnings("nls")
     private final static String APPOINTMENT_PATIENT_FIELD = "patient"; //$NON-NLS-1$
     private final static String SPECIALTY_FIELD = "specialty"; //$NON-NLS-1$
@@ -113,7 +116,13 @@ public class JpaPatientRepository implements PatientRepository {
      */
     @Override
     public List<Record> getAllRecordsById(final String id) {
-        final CriteriaBuilder cb = manager.getCriteriaBuilder();
+
+       return manager
+                .createNamedQuery(JpaRecord.RECORDS_BY_PATIENT_PIN,Record.class)
+                .setParameter("id",id)
+                .getResultList();
+
+       /* final CriteriaBuilder cb = manager.getCriteriaBuilder();
         final CriteriaQuery<Record> criteriaQuery = cb.createQuery(Record.class);
         final Root<JpaRecord> recFrom = criteriaQuery.from(JpaRecord.class);
 
@@ -121,7 +130,7 @@ public class JpaPatientRepository implements PatientRepository {
                 cb.equal(recFrom.get(APPOINTMENT_FIELD).get(APPOINTMENT_PATIENT_FIELD).<String>get(PIN_FIELD),
                         id));
 
-        return manager.createQuery(criteriaQuery).getResultList();
+        return manager.createQuery(criteriaQuery).getResultList();*/
     }
 
     @Override
