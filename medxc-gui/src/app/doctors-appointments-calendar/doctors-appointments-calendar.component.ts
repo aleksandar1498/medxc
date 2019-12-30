@@ -8,7 +8,10 @@ import * as moment from 'moment';
 import interactionPlugin from '@fullcalendar/interaction'; // for dateClick
 import { CalendarService } from '../calendar.service';
 import {EventDialogComponent} from "../event-dialog/event-dialog.component";
-
+import {DoctorsService} from "../doctors.service";
+import {DatePipe} from "@angular/common";
+import {map} from "rxjs/operators";
+import {Event} from '../model/event';
 @Component({
   selector: 'app-doctors-appointments-calendar',
   templateUrl: './doctors-appointments-calendar.component.html',
@@ -20,12 +23,14 @@ export class DoctorsAppointmentsCalendarComponent implements OnInit {
   calendarComponent: FullCalendarComponent; // the #calendar in the template
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarVisible = true;
-  calendarEvents: any[] = [
+  calendarEvents: Event[] = [
   ];
-  data: any;
+  fromDate = new Date();
+  toDate = new Date();
+  id : string;
   constructor(
     private calendarService: CalendarService,
-    public dialog: MatDialog) {
+    public dialog: MatDialog, private datePipe: DatePipe) {
 
   }
   ngOnInit() {
@@ -66,18 +71,27 @@ export class DoctorsAppointmentsCalendarComponent implements OnInit {
       }
     );
   }
-  addAppointment(app: any) {
-    this.calendarEvents = this.calendarEvents.concat(app);
-  }
+
   renderAppointments(): void {
     this.calendarService.getEvents().subscribe(data => {
+      console.log(data);
       // JOIN the data, this kind of change is needed to trigger rerender of the calendar
       this.calendarEvents = Object.assign([], this.calendarEvents, data);
 
     });
 
   }
-
+  viewAppointments(id):void{
+    const fromDateString = this.datePipe.transform(this.fromDate, 'yyyy-MM-dd');
+    const toDateString = this.datePipe.transform(this.toDate, 'yyyy-MM-dd');
+    this.calendarService.findAppointments(id, fromDateString, toDateString).subscribe(apps => {
+      let events:Event[] = apps.map(a => {
+        return new Event(a.status,this.datePipe.transform(a.date,'yyyy-MM-dd HH:mm'));
+      });
+      this.calendarEvents = Object.assign([], this.calendarEvents, events);
+      console.log(events);
+    });
+  }
   resizeCalendar():void{
     console.log("resized");
   }

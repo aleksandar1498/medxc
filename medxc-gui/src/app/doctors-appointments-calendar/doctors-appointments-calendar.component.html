@@ -6,6 +6,22 @@
 
   </mat-form-field>
 </div>
+<div>
+  <span>View appointments for Doctor with id:</span>
+  <input [(ngModel)]="id"><br>
+  <span>Choose 'from' date</span>
+  <input matInput [matDatepicker]="fromDatePicker" placeholder="Choose 'from' date" [(ngModel)]="fromDate" required>
+  <mat-datepicker-toggle matInput [for]="fromDatePicker"></mat-datepicker-toggle>
+  <mat-datepicker #fromDatePicker></mat-datepicker>
+
+  <br>
+  <span>Choose 'to' date</span>
+  <input matInput [matDatepicker]="toDatePicker" placeholder="Choose 'to' date" [(ngModel)]="toDate" required>
+  <mat-datepicker-toggle matInput [for]="toDatePicker"></mat-datepicker-toggle>
+  <mat-datepicker #toDatePicker></mat-datepicker>
+  <br>
+  <button (click)="viewAppointments(id)">View Appointments</button>
+</div>
 <div *ngIf="calendarVisible">
   <full-calendar #calendar
                  defaultView="timeGridWeek"
