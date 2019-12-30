@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@fullcalendar/core/main.css';
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+@import '~@fullcalendar/timegrid/main.css'; /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+
+.fc-slats tr:nth-child(odd){
+  /*background-color:#80808042;*/
+}
+
+.fc-nonbusiness {
+  /*pointer-events: none;*/
+}

@@ -1,0 +1,25 @@
+<div>
+  <mat-form-field>
+    <input #ref matInput [matDatepicker]="picker" (dateChange)="setDate(ref)" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+  </mat-form-field>
+</div>
+<div *ngIf="calendarVisible">
+  <full-calendar #calendar
+                 defaultView="timeGridWeek"
+                 [header]="{left: 'prev,next,today',center: 'title',right: 'dayGridMonth,timeGridWeek,timeGridDay'}"
+                 [slotDuration]="'00:15:00'"
+                 [allDaySlot]="false"
+                 [contentHeight]="600"
+                 [locale]= "'bgr'"
+                 [eventTimeFormat]="{ hour: '2-digit',minute: '2-digit',hour12: false}"
+                 [plugins]="calendarPlugins"
+                 [minTime]="'07:30:00'"
+                 [maxTime]="'19:30:00'"
+                 [events]="calendarEvents"
+                 (dateClick)="handleDateClick($event)"
+  ></full-calendar>
+</div>
+

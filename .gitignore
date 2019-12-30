@@ -4,3 +4,4 @@
 .eclipse-pmd
 target
 bin
+/medxc-services-implementation/src/main/java/com/dxc/medxc/validators/models/Main.java

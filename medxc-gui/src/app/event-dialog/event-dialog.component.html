@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Appointment for {{data.start | date:'medium'}}</h1>
+
+<mat-dialog-content [formGroup]="form">
+  <div style="width: 50%;margin: 0 auto;">
+    <mat-form-field style="width: 100%;">
+      <mat-label>Duration of appointment</mat-label>
+      <mat-select formControlName="end">
+        <mat-option type="date" *ngFor="let key of data.keys" [value]="data.durations[key]">
+          {{key}} minutes : to {{data.durations[key] | date:'shortTime'}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" formControlName="start" [(ngModel)]="data.start" />
+    </mat-form-field>
+
+  </div>
+</mat-dialog-content>
+<div class="appointment-btns">
+  <button class="btn btn-primary" mat-button (click)="onNoClick()">Exit</button>
+  <button class="btn btn-primary" mat-button (click)="createAppointment()" cdkFocusInitial>Create Appointment</button>
+
+</div>

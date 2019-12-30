@@ -53,6 +53,8 @@ public final class DoctorRestService {
      * @return A list containing all appointments between the two dates of a
      *         particular doctor.
      */
+
+    // path -> medxc/rest/doctors/appointments/0055555555/2019-11-01/2019-12-31
     @GET
     @Path("/appointments/{id}/{from}/{to}")
     @Produces(MediaType.APPLICATION_JSON)

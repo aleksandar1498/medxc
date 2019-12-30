@@ -41,7 +41,9 @@ import {
   MatRadioModule
 } from '@angular/material';
 import { PatientTestsComponent } from './patient-tests/patient-tests.component';
-// import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import {FullCalendarModule} from "@fullcalendar/angular";
+import { DoctorsAppointmentsCalendarComponent } from './doctors-appointments-calendar/doctors-appointments-calendar.component';
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
 
 const materialModules = [
   MatToolbarModule,
@@ -56,10 +58,9 @@ const materialModules = [
   MatSelectModule,
   MatRadioModule,
   MatDialogModule,
-  MatSelectModule,
   MatTableModule,
   MatTabsModule,
-  MatSnackBarModule
+  MatSnackBarModule,
 ];
 
 @NgModule({
@@ -75,7 +76,9 @@ const materialModules = [
     PatientHistoryComponent,
     PatientRegisterComponent,
     RecordComponent,
-    PatientTestsComponent
+    PatientTestsComponent,
+    DoctorsAppointmentsCalendarComponent,
+    EventDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -89,8 +92,9 @@ const materialModules = [
     ReactiveFormsModule,
     MatTableModule,
     MatTabsModule,
-    ...materialModules
-    // MatMomentDateModule
+    FullCalendarModule,
+    ...materialModules,
+
 
 
   ],
@@ -100,6 +104,6 @@ const materialModules = [
     { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [RecordComponent]
+  entryComponents: [RecordComponent,EventDialogComponent]
 })
 export class AppModule { }
