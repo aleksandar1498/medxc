@@ -17,9 +17,9 @@ export class CalendarService {
     According to the day , the end of the event will be set
     */
   calendarEvents: Event[] = [
-    new Event('Appointment A',"2019-12-15 15:30","2019-12-15 15:45" ),
-    new Event('Appointment Suray',"2019-12-20 15:30" ),
-    new Event('Appointment B', "2019-12-17 13:10")
+    new Event('Appointment A',"2020-01-03 15:30","2019-12-15 15:45" ),
+    new Event('Appointment Suray',"2020-01-02 15:30" ),
+    new Event('Appointment B', "2020-01-01 13:10")
   ];
   getEvents(): Observable<any> {
     return of(this.calendarEvents);

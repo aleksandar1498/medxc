@@ -8,19 +8,18 @@ import * as moment from 'moment';
 import interactionPlugin from '@fullcalendar/interaction'; // for dateClick
 import { CalendarService } from '../calendar.service';
 import {EventDialogComponent} from "../event-dialog/event-dialog.component";
-import {DoctorsService} from "../doctors.service";
 import {DatePipe} from "@angular/common";
-import {map} from "rxjs/operators";
 import {Event} from '../model/event';
+
 @Component({
   selector: 'app-doctors-appointments-calendar',
   templateUrl: './doctors-appointments-calendar.component.html',
   styleUrls: ['./doctors-appointments-calendar.component.css']
 })
-export class DoctorsAppointmentsCalendarComponent implements OnInit {
+export class DoctorsAppointmentsCalendarComponent{
 
   @ViewChild('calendar', { 'static': false })
-  calendarComponent: FullCalendarComponent; // the #calendar in the template
+  calendarComponent: FullCalendarComponent; // the #calendar in the template*/
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarVisible = true;
   calendarEvents: Event[] = [
@@ -31,10 +30,10 @@ export class DoctorsAppointmentsCalendarComponent implements OnInit {
   constructor(
     private calendarService: CalendarService,
     public dialog: MatDialog, private datePipe: DatePipe) {
-
   }
+
   ngOnInit() {
-    this.renderAppointments();
+     this.renderAppointments();
   }
 
   setDate(evt: MatDatepickerInputEvent<Date>) {
@@ -74,14 +73,14 @@ export class DoctorsAppointmentsCalendarComponent implements OnInit {
 
   renderAppointments(): void {
     this.calendarService.getEvents().subscribe(data => {
-      console.log(data);
+
       // JOIN the data, this kind of change is needed to trigger rerender of the calendar
       this.calendarEvents = Object.assign([], this.calendarEvents, data);
-
     });
 
   }
   viewAppointments(id):void{
+
     const fromDateString = this.datePipe.transform(this.fromDate, 'yyyy-MM-dd');
     const toDateString = this.datePipe.transform(this.toDate, 'yyyy-MM-dd');
     this.calendarService.findAppointments(id, fromDateString, toDateString).subscribe(apps => {
@@ -92,8 +91,6 @@ export class DoctorsAppointmentsCalendarComponent implements OnInit {
       console.log(events);
     });
   }
-  resizeCalendar():void{
-    console.log("resized");
-  }
+
 
 }
