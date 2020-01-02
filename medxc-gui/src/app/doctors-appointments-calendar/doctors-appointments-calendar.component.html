@@ -1,42 +1,45 @@
-<div>
-  <mat-form-field>
-    <input #ref matInput [matDatepicker]="picker" (dateChange)="setDate(ref)" placeholder="Choose a date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+<!--<div>
+ <mat-form-field>
+   <input #ref matInput [matDatepicker]="picker" (dateChange)="setDate(ref)" placeholder="Choose a date">
+   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+   <mat-datepicker #picker></mat-datepicker>
 
-  </mat-form-field>
+ </mat-form-field>
 </div>
 <div>
-  <span>View appointments for Doctor with id:</span>
-  <input [(ngModel)]="id"><br>
-  <span>Choose 'from' date</span>
-  <input matInput [matDatepicker]="fromDatePicker" placeholder="Choose 'from' date" [(ngModel)]="fromDate" required>
-  <mat-datepicker-toggle matInput [for]="fromDatePicker"></mat-datepicker-toggle>
-  <mat-datepicker #fromDatePicker></mat-datepicker>
+ <span>View appointments for Doctor with id:</span>
+ <input [(ngModel)]="id"><br>
+ <span>Choose 'from' date</span>
+ <input matInput [matDatepicker]="fromDatePicker" placeholder="Choose 'from' date" [(ngModel)]="fromDate" required>
+ <mat-datepicker-toggle matInput [for]="fromDatePicker"></mat-datepicker-toggle>
+ <mat-datepicker #fromDatePicker></mat-datepicker>
 
-  <br>
-  <span>Choose 'to' date</span>
-  <input matInput [matDatepicker]="toDatePicker" placeholder="Choose 'to' date" [(ngModel)]="toDate" required>
-  <mat-datepicker-toggle matInput [for]="toDatePicker"></mat-datepicker-toggle>
-  <mat-datepicker #toDatePicker></mat-datepicker>
-  <br>
-  <button (click)="viewAppointments(id)">View Appointments</button>
+ <br>
+ <span>Choose 'to' date</span>
+ <input matInput [matDatepicker]="toDatePicker" placeholder="Choose 'to' date" [(ngModel)]="toDate" required>
+ <mat-datepicker-toggle matInput [for]="toDatePicker"></mat-datepicker-toggle>
+ <mat-datepicker #toDatePicker></mat-datepicker>
+ <br>
+ <button (click)="viewAppointments(id)">View Appointments</button>
 </div>
 <div *ngIf="calendarVisible">
-  <full-calendar #calendar
-                 defaultView="timeGridWeek"
-                 [header]="{left: 'prev,next,today',center: 'title',right: 'dayGridMonth,timeGridWeek,timeGridDay'}"
-                 [slotDuration]="'00:15:00'"
-                 [allDaySlot]="false"
-                 [contentHeight]="600"
-                 [locale]= "'bgr'"
-                 [eventTimeFormat]="{ hour: '2-digit',minute: '2-digit',hour12: false}"
-                 [plugins]="calendarPlugins"
-                 [minTime]="'07:30:00'"
-                 [maxTime]="'19:30:00'"
-                 [events]="calendarEvents"
-                 (dateClick)="handleDateClick($event)"
+<full-calendar #calendar
+                defaultView="timeGridWeek"
+                [header]="{left: 'prev,next,today',center: 'title',right: 'dayGridMonth,timeGridWeek,timeGridDay'}"
+                [slotDuration]="'00:15:00'"
+                [allDaySlot]="false"
+                [contentHeight]="600"
+                [locale]= "'bgr'"
+                [eventTimeFormat]="{ hour: '2-digit',minute: '2-digit',hour12: false}"
+                [plugins]="calendarPlugins"
+                [minTime]="'07:30:00'"
+                [maxTime]="'19:30:00'"
+                [events]="calendarEventss()"
+                (dateClick)="handleDateClick($event)"
 
-  ></full-calendar>
-  </div>
+ ></full-calendar>
 
+  </div>-->
+
+<div #calendar>
+</div>
