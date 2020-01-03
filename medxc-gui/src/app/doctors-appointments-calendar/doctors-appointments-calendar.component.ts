@@ -21,18 +21,16 @@ export class DoctorsAppointmentsCalendarComponent implements AfterViewInit {
 
 
  @ViewChild('calendar', { 'static': false })
- calendarComponent:ElementRef;
+  calendarComponent:ElementRef;
   calendar:Calendar;
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarVisible = true;
   calendarEvents: Event[] = [
  ];
   ngAfterViewInit() {
-    console.log("Callsed after view init",this.calendarComponent.nativeElement);
-    this.renderAppointments();
+    console.log("Called after view");
     this.initCalendar();
 
-    console.log(this.calendarEvents);
   }
   fromDate = new Date();
   toDate = new Date();
@@ -40,7 +38,8 @@ export class DoctorsAppointmentsCalendarComponent implements AfterViewInit {
 
 
   ngOnInit() {
-
+    console.log("Called oninit");
+    this.renderAppointments();
 
   }
  constructor(
@@ -55,7 +54,7 @@ export class DoctorsAppointmentsCalendarComponent implements AfterViewInit {
   }
 
   handleDateClick(arg) {
-
+  console.log("dialog",this.dialog);
 
       let now = moment(arg.date);
 
@@ -89,6 +88,7 @@ export class DoctorsAppointmentsCalendarComponent implements AfterViewInit {
       // JOIN the data, this kind of change is needed to trigger rerender of the calendar
       this.calendarEvents = Object.assign([], this.calendarEvents, data);
     });
+
   }
   viewAppointments(id):void{
 
@@ -130,5 +130,14 @@ export class DoctorsAppointmentsCalendarComponent implements AfterViewInit {
 
 
 
+  }
+
+  addEvent() {
+    console.log("Clickked");
+   // this.calendarEvents.push(new Event("Hello","2020-01-02 17:30"));
+
+    this.calendar.addEvent(new Event("Hello","2020-01-02 17:30") );
+
+    //this.calendar.refetchEvents();
   }
 }
